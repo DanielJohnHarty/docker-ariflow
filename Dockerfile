@@ -86,6 +86,9 @@ RUN mkdir -p /opt/AWS-CLI \
   && sudo /opt/AWS-CLI/aws/install \
   && rm /opt/awscliv2.zip 
 
+RUN pip uninstall -y SQLAlchemy
+RUN pip install SQLAlchemy==1.3.15
+
 EXPOSE 8080 5555 8793
 
 USER airflow
